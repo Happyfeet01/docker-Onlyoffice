@@ -1,0 +1,12 @@
+    version: '2.2'
+    services:
+         onlyoffice:
+           image: onlyoffice/documentserver:latest
+           restart: always
+           volumes:
+           - /home/onlyoffice/data:/var/www/onlyoffice/Data
+           environment:
+           - JWT_ENABLED=true
+           - JWT_SECRET=SuperSecretKey
+           ports:
+           - '8833:80'
